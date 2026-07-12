@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int n, original, reverse = 0, digit;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    original = n;
+
+    while(n != 0) {
+        digit = n % 10;                 // Get last digit
+        reverse = reverse * 10 + digit; // Create reverse number
+        n = n / 10;                     // Remove last digit
+    }
+
+    if(original == reverse) {
+        printf("The number is a palindrome");
+    }
+    else {
+        printf("The number is not a palindrome");
+    }
+
+    return 0;
+}
