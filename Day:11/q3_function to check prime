@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// Function declaration
+int checkPrime(int n);
+
+int main()
+{
+    int num, result;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    result = checkPrime(num);
+
+    if(result == 1)
+        printf("%d is a Prime number", num);
+    else
+        printf("%d is not a Prime number", num);
+
+    return 0;
+}
+
+// Function definition
+int checkPrime(int n)
+{
+    int i;
+
+    if(n <= 1)
+        return 0;
+
+    for(i = 2; i < n; i++)
+    {
+        if(n % i == 0)
+            return 0;
+    }
+
+    return 1;
+}
+
