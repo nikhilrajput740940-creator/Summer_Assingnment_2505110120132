@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+int main()
+{
+    int choice, score = 0;
+
+    printf("===== Quiz Application =====\n");
+
+    // Question 1
+    printf("\n1. What is the capital of India?");
+    printf("\n1. Mumbai");
+    printf("\n2. Delhi");
+    printf("\n3. Kolkata");
+    printf("\n4. Chennai");
+
+    printf("\nEnter your answer: ");
+    scanf("%d", &choice);
+
+    if(choice == 2)
+    {
+        score++;
+    }
+
+    // Question 2
+    printf("\n2. Which language is used for C programming?");
+    printf("\n1. HTML");
+    printf("\n2. Python");
+    printf("\n3. C");
+    printf("\n4. Java");
+
+    printf("\nEnter your answer: ");
+    scanf("%d", &choice);
+
+    if(choice == 3)
+    {
+        score++;
+    }
+
+    // Question 3
+    printf("\n3. How many bits are there in 1 byte?");
+    printf("\n1. 4");
+    printf("\n2. 8");
+    printf("\n3. 16");
+    printf("\n4. 32");
+
+    printf("\nEnter your answer: ");
+    scanf("%d", &choice);
+
+    if(choice == 2)
+    {
+        score++;
+    }
+
+    printf("\n===== Result =====");
+    printf("\nYour score is: %d/3", score);
+
+    if(score == 3)
+    {
+        printf("\nExcellent!");
+    }
+    else if(score >= 2)
+    {
+        printf("\nGood Job!");
+    }
+    else
+    {
+        printf("\nTry Again!");
+    }
+
+    return 0;
+}
