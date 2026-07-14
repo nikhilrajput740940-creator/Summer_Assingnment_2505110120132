@@ -1,0 +1,86 @@
+#include <stdio.h>
+
+struct BankAccount
+{
+    int accountNumber;
+    char name[50];
+    float balance;
+};
+
+int main()
+{
+    struct BankAccount account;
+    int choice;
+    float amount;
+
+    printf("===== Bank Account System =====\n");
+
+    // Account creation
+    printf("Enter Account Number: ");
+    scanf("%d", &account.accountNumber);
+
+    printf("Enter Account Holder Name: ");
+    scanf("%s", account.name);
+
+    printf("Enter Initial Balance: ");
+    scanf("%f", &account.balance);
+
+    do
+    {
+        printf("\n\n1. Display Account Details");
+        printf("\n2. Deposit Money");
+        printf("\n3. Withdraw Money");
+        printf("\n4. Check Balance");
+        printf("\n5. Exit");
+
+        printf("\nEnter your choice: ");
+        scanf("%d", &choice);
+
+        switch(choice)
+        {
+            case 1:
+                printf("\nAccount Number: %d", account.accountNumber);
+                printf("\nAccount Holder Name: %s", account.name);
+                printf("\nBalance: %.2f", account.balance);
+                break;
+
+            case 2:
+                printf("Enter amount to deposit: ");
+                scanf("%f", &amount);
+
+                account.balance += amount;
+
+                printf("Amount deposited successfully.");
+                break;
+
+            case 3:
+                printf("Enter amount to withdraw: ");
+                scanf("%f", &amount);
+
+                if(amount <= account.balance)
+                {
+                    account.balance -= amount;
+                    printf("Amount withdrawn successfully.");
+                }
+                else
+                {
+                    printf("Insufficient balance.");
+                }
+                break;
+
+            case 4:
+                printf("Current Balance: %.2f", account.balance);
+                break;
+
+            case 5:
+                printf("Thank you for using Bank Account System.");
+                break;
+
+            default:
+                printf("Invalid choice.");
+        }
+
+    } while(choice != 5);
+
+    return 0;
+}
