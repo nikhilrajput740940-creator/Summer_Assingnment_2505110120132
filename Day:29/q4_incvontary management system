@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+struct Product
+{
+    int id;
+    char name[50];
+    int quantity;
+    float price;
+};
+
+int main()
+{
+    struct Product product[100];
+    int n, i;
+
+    printf("Enter number of products: ");
+    scanf("%d", &n);
+
+    // Input product details
+    for(i = 0; i < n; i++)
+    {
+        printf("\nEnter details of product %d\n", i + 1);
+
+        printf("Enter Product ID: ");
+        scanf("%d", &product[i].id);
+
+        printf("Enter Product Name: ");
+        scanf("%s", product[i].name);
+
+        printf("Enter Quantity: ");
+        scanf("%d", &product[i].quantity);
+
+        printf("Enter Price: ");
+        scanf("%f", &product[i].price);
+    }
+
+    // Display inventory details
+    printf("\n===== Inventory Details =====\n");
+
+    for(i = 0; i < n; i++)
+    {
+        printf("\nProduct %d", i + 1);
+        printf("\nProduct ID: %d", product[i].id);
+        printf("\nProduct Name: %s", product[i].name);
+        printf("\nQuantity: %d", product[i].quantity);
+        printf("\nPrice: %.2f", product[i].price);
+        printf("\nTotal Value: %.2f\n", product[i].quantity * product[i].price);
+    }
+
+    return 0;
+}
